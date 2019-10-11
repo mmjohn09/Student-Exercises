@@ -11,5 +11,13 @@ namespace StudentExercises
         {
             student.AssignedExercises.Add(exercise);
         }
+        public Instructor(string firstName, string lastName, string slackHandle, string cohort, string specialty)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            SlackHandle = slackHandle;
+            Cohort = cohort;
+            Specialty = specialty;
+        }
     }
 }
