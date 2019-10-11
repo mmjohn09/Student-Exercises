@@ -91,21 +91,66 @@ namespace StudentExercises
             List<Exercise> javascriptExercises = allExercises
             .Where(exercise => exercise.Language == "Javascript").ToList();
 
+            Console.WriteLine("List of Javascript exercises:");
+            Console.WriteLine("-----------------------------");
+
+            foreach (Exercise exercise in javascriptExercises)
+            {
+             Console.WriteLine(exercise.ExerciseName);
+            }
+             Console.WriteLine("----------------------------"); 
+
             //Get all students in Cohort 34
             List<Student> cohort34Students = allStudents
             .Where(student => student.Cohort == "Day Cohort 34").ToList();
+
+            Console.WriteLine("List of C34 students:");
+            Console.WriteLine("-----------------------------");
+
+            foreach (Student student in cohort34Students)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+                Console.WriteLine("----------------------------"); 
 
             //Get all instructors in Cohort 34
             List<Instructor> cohort34Instructors = allInstructors
             .Where(instructor => instructor.Cohort == "Day Cohort 34").ToList();
 
+            Console.WriteLine("List of C34 instructors:");
+            Console.WriteLine("-----------------------------");
+
+            foreach (Instructor instructor in cohort34Instructors)
+            {
+                Console.WriteLine($"{instructor.FirstName} {instructor.LastName}");
+            }
+                Console.WriteLine("----------------------------"); 
+
             //Sort students in alphabetical order by last name
             List<Student> studentLastNameSort = allStudents
             .OrderBy(student => student.LastName).ToList();
 
+            Console.WriteLine("Students sorted by last name:");
+            Console.WriteLine("-----------------------------");
+
+            foreach (Student student in studentLastNameSort)
+            {
+                Console.WriteLine($"{student.LastName}, {student.FirstName}");
+            }
+                Console.WriteLine("----------------------------");
+
             //Get any students not assigned an exercise
             List<Student> studentsNotAssignedExercise = allStudents
             .Where(student => student.AssignedExercises.Count == 0).ToList();
+            
+            Console.WriteLine("Students with 0 exercises:");
+            Console.WriteLine("-----------------------------");
+
+            foreach (Student student in studentsNotAssignedExercise)
+            {
+                Console.WriteLine($"{student.FirstName} {student.LastName}");
+            }
+                Console.WriteLine("-----------------------------");
 
             //Sort students by number of exercises assigned
             List<Student> studentsSortedByNumExercises = allStudents
